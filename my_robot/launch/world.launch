@@ -32,11 +32,11 @@
         args="-urdf -param robot_description -model new_robot 
               -x $(arg x) -y $(arg y) -z $(arg z)
               -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
-              
-  <!--launch rviz-->
-  <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find my_robot)/launch/rviz_config.rviz"/> 
-   
-  <!-- Launch AMCL node Monte Carlo Localization-->
-  <include file="$(find my_robot)/launch/amcl.launch"/>
+             
+  
+  <!-- Include mapping launch -->
+  <include file="$(find my_robot)/launch/mapping.launch"/>
+  
+  
   
 </launch>
